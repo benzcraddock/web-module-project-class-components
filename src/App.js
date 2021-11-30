@@ -37,15 +37,29 @@ class App extends React.Component {
 
   // this component is going to take care of state, and any change handlers you need to work with your state
 
+  handleClear = () => {
+    // 1. setState
+    // 2. loop through all todos
+    // 3. remove all todos that have completed === true
+    // 4. save filtered todos to state
+
+    this.setState({
+      ...this.state,
+      todos: this.state.todos.filter(todo => {
+        return(todo.completed === false);
+      })
+    })
+  }
+
   render() {
     const { todos } = this.state;
 
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={todos}/>''
+        <TodoList todos={todos}/>
         <TodoForm />
-        <button>Clear</button>
+        <button onClick={this.handleClear}>Clear</button>
       </div>
     );
   }
