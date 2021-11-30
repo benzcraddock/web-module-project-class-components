@@ -37,14 +37,14 @@ class App extends React.Component {
 
   // this component is going to take care of state, and any change handlers you need to work with your state
 
-  handleAdd = () => {
+  handleAdd = (task) => {
     // 1. setState
     // 2. change todos
     // 3. make a copy of todos
     // 4. add a new todo to the end of our todo list
 
     const newTodo = {
-      task: 'Cook things',
+      task: task,
       id: Date.now(),
       completed: false
     }
@@ -69,13 +69,36 @@ class App extends React.Component {
     })
   }
 
+  handleToggle = (clickedId) => {
+    // 1. setState
+    // 2. change todos
+    // 3. find the todo that we clicked on
+    // 4. flip the value of completed for that todo
+    // 5. keep all other todos the same
+
+    // const clickedId = 1528817099921;
+
+    this.setState({
+      ...this.state,
+      todos: this.state.todos.map(todo => {
+        if (todo.id === clickedId) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        }
+        return todo;
+      })
+    })
+  }
+
   render() {
     const { todos } = this.state;
 
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={todos}/>
+        <TodoList handleToggle={this.handleToggle} todos={todos}/>
         <TodoForm handleAdd={this.handleAdd} />
         <button onClick={this.handleClear}>Clear</button>
       </div>

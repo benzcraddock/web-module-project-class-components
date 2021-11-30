@@ -60,7 +60,7 @@ In this project you will build an application that allows for todos to be added,
   - Once a todo is submitted, the Todo List should re-render and show the added todo.
 
 ## Submission Format
-- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
-- [ ] Connect your fork to Codegrade using the "Connect Git" button.
-- [ ] Find your newly created fork from the list and push your work to main.
-- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
+- [X] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [X] Connect your fork to Codegrade using the "Connect Git" button.
+- [X] Find your newly created fork from the list and push your work to main.
+- [X] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
